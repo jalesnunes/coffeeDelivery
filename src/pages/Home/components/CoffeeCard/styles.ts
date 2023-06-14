@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const CoffeeItem = styled.div`
-  width: 19rem;
-  height: 21rem;
+  width: 20rem;
+  height: 22rem;
+  background-color: ${(props) => props.theme["base-card"]};
+
+  border-radius: 0 10% 0 10%;
 
   /* margin-top: 3.375rem; */
   padding: 1rem;
@@ -44,6 +47,9 @@ export const CoffeeItem = styled.div`
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.1255rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     text-align: center;
 

@@ -14,7 +14,7 @@ import { CoffeeCard } from "./components/CoffeeCard";
 export function Home() {
   return (
     <HomeContainer>
-      <DescriptionSec>
+      <DescriptionSec >
         <DescriptionContent>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
           <h2>

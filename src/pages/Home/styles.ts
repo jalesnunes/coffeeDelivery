@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundImage from '../../assets/Background.png'
 
 export const HomeContainer = styled.main`
   margin-top: 6rem;
@@ -6,6 +7,9 @@ export const HomeContainer = styled.main`
 
 export const DescriptionSec = styled.section`
   display: flex;
+
+  margin-bottom: 6rem;
+
 `;
 
 export const DescriptionContent = styled.div`
@@ -97,4 +101,5 @@ export const OurCoffees = styled.h1`
   font-weight: 800;
   line-height: 2.6rem;
   color: ${(props) => props.theme["base-subtitle"]};
+  margin-bottom: 2rem;
 `;
