@@ -1,52 +1,87 @@
-import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money} from 'phosphor-react'
-import { CoffeeCartItens } from './components/CoffeeCartItens'
+import {
+  MapPinLine,
+  CurrencyDollar,
+  CreditCard,
+  Bank,
+  Money,
+} from "phosphor-react";
+import { CoffeeCartItens } from "./components/CoffeeCartItens";
+import { CartContainer, ItensSection, OrderSection } from "./styles";
 
 export function Cart() {
-    return (
-        <>
-            <h2>Complete seu pedido</h2>
-
-            <form>
+  return (
+    <CartContainer>
+      <form>
+        <OrderSection>
+          <h2>Complete seu pedido</h2>
+          <div className="address">
+            <header>
+              <MapPinLine size={24} color="#C47F17" />
+              <div>
                 <h3>Endereco de entrega</h3>
-                <MapPinLine size={24} color="#C47F17"  />
                 <p>Informe o endereco onde deseja receber seu pedido</p>
-                <input type="number" placeholder='CEP' />
-                <input type="text" placeholder='Rua' />
-                <input type="number" placeholder='Numero' />
-                <input type="text" placeholder='Complemento' />
-                <input type="text" placeholder='Bairro' />
-                <input type="text" placeholder='Cidade' />
-                <input type="text" placeholder='UF' />
+              </div>
+            </header>
 
-                <CurrencyDollar size={24} color='#8047F8' />
+            <div>
+              <input type="number" className="cep" placeholder="CEP" />
+              <input type="text" className="rua" placeholder="Rua" />
+              <input type="number" className="numero" placeholder="Numero" />
+              <input
+                type="text"
+                className="complemento"
+                placeholder="Complemento"
+              />
+              <input type="text" className="bairro" placeholder="Bairro" />
+              <input type="text" className="cidade" placeholder="Cidade" />
+              <input type="text" className="uf" placeholder="UF" />
+            </div>
+          </div>
+
+          <div className="payment-type">
+            <header>
+              <CurrencyDollar size={24} color="#8047F8" />
+              <div>
                 <h3>Pagamento</h3>
-                <p>O pagamento e feito na estrega. Escolha a forma que deseja pagar</p>
-                <button>
-                    <CreditCard size={16} color='#8047F8' />
-                    CARTAO DE CREDITO
-                </button>
-                <button>
-                    <Bank size={16} color='#8047F8' />
-                    CARTAO DE DEBITO
-                </button>
-                <button>
-                    <Money size={16} color='#8047F8' />
-                    DINHEIRO
-                </button>
+                <p>
+                  O pagamento e feito na estrega. Escolha a forma que deseja
+                  pagar
+                </p>
+              </div>
+            </header>
 
-                <h2>Cafes selecionados</h2>
-                <CoffeeCartItens />
-                <CoffeeCartItens />
-                <p>Total de itens</p>
-                <span>R$ 29,70</span>
-                <p>Entrega</p>
-                <span>R$ 3,50</span>
+            <div className="payment-method">
+              <button>
+                <CreditCard size={16} color="#8047F8" />
+                CARTAO DE CREDITO
+              </button>
+              <button>
+                <Bank size={16} color="#8047F8" />
+                CARTAO DE DEBITO
+              </button>
+              <button>
+                <Money size={16} color="#8047F8" />
+                DINHEIRO
+              </button>
+            </div>
+          </div>
+        </OrderSection>
 
-                <p>Total</p>
-                <span>R$ 33.20</span>
+        <ItensSection>
+          <h2>Cafes selecionados</h2>
+          <CoffeeCartItens />
+          <CoffeeCartItens />
+          <p>Total de itens</p>
+          <span>R$ 29,70</span>
+          <p>Entrega</p>
+          <span>R$ 3,50</span>
 
-                <button type="submit">Confirmar Pedido</button>
-            </form>
-        </>
-    )
+          <p>Total</p>
+          <span>R$ 33.20</span>
+
+          <button type="submit">Confirmar Pedido</button>
+        </ItensSection>
+      </form>
+    </CartContainer>
+  );
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import backgroundImage from '../../assets/Background.png'
 
 export const HomeContainer = styled.main`
   margin-top: 6rem;
