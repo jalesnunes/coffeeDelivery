@@ -51,18 +51,28 @@ export function Cart() {
             </header>
 
             <div className="payment-method">
-              <button>
-                <CreditCard size={16} color="#8047F8" />
-                CARTAO DE CREDITO
-              </button>
-              <button>
-                <Bank size={16} color="#8047F8" />
-                CARTAO DE DEBITO
-              </button>
-              <button>
-                <Money size={16} color="#8047F8" />
-                DINHEIRO
-              </button>
+              
+                <label>
+                  <input type="checkbox" name="" id="" />
+                  <span>
+                    <CreditCard size={16} color="#8047F8" />
+                    CARTAO DE CREDITO
+                  </span>
+                </label>
+
+                <option value="2">
+                  <span>
+                    <Bank size={16} color="#8047F8" />
+                    CARTAO DE DEBITO
+                  </span>
+                </option>
+
+                <option value="3">
+                  <span>
+                    <Money size={16} color="#8047F8" />
+                    DINHEIRO
+                  </span>
+                </option>
             </div>
           </div>
         </OrderSection>

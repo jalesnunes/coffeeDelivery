@@ -57,7 +57,7 @@ export const CoffeeItem = styled.div`
   }
 `;
 
-export const QuantityForm = styled.form`
+export const QuantityOption = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -89,6 +89,14 @@ export const QuantityForm = styled.form`
     border-radius: 0.375rem;
 
     background: ${(props) => props.theme["base-button"]};
+
+    .minus:hover {
+      cursor: pointer;
+    }
+
+    .plus:hover {
+      cursor: pointer;
+    }
 
     span {
       font-size: 1rem;
