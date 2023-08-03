@@ -102,7 +102,7 @@ export const QuantityOption = styled.div`
       font-size: 1rem;
       line-height: 1.3rem;
 
-      color: ${(props) => props.theme["base-title"]};
+      color: ${(props) => props.theme["base-subtitle"]};
     }
   }
 

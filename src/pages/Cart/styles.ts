@@ -12,7 +12,7 @@ export const OrderSection = styled.section`
   width: 60%;
 
   h2 {
-    font: "Baloo 2";
+    font-family: "Baloo 2";
     font-size: 1.125rem;
     font-weight: 700;
 
@@ -132,4 +132,11 @@ export const OrderSection = styled.section`
 
 export const ItensSection = styled.section`
   width: 40%;
+
+  h2 {
+    font-family: 'Baloo 2';
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: ${(props) => props.theme["base-title"]};
+  }
 `;
