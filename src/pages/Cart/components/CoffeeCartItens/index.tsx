@@ -1,12 +1,16 @@
 import expressoImg from "../../../../assets/coffeeTypes/expresso.png";
 import { Minus, Plus, Trash } from 'phosphor-react'
+import { CoffeeCartItensContainer, CoffeeDetailsContainer, ImgContainer, PriceContainer } from "./styles";
 
 export function CoffeeCartItens() {
     return (
-        <>
-            <img src={expressoImg} />
+        <CoffeeCartItensContainer>
+            <ImgContainer>
+                 <img src={expressoImg} />
+            </ImgContainer>
+            
+            <CoffeeDetailsContainer>
             <p>Expresso Tradicional</p>
-            <p>R$ <span>9.90</span></p>
             <div>
                 <Minus size={14}  color="#8047F8"/>
                 <span>1</span>
@@ -16,6 +20,12 @@ export function CoffeeCartItens() {
                     Remover
                 </button>
             </div>
-        </>
+            </CoffeeDetailsContainer>
+
+            <PriceContainer>
+                <p>R$ <span>9.90</span></p>
+            </PriceContainer>
+        </CoffeeCartItensContainer>
+        
     )
 }
