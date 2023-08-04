@@ -51,45 +51,51 @@ export function Cart() {
             </header>
 
             <div className="payment-method">
-              
-                <label>
-                  <input type="checkbox" name="" id="" />
-                  <span>
-                    <CreditCard size={16} color="#8047F8" />
-                    CARTAO DE CREDITO
-                  </span>
-                </label>
+              <label>
+                <input type="checkbox" name="" id="" />
+                <span>
+                  <CreditCard size={16} color="#8047F8" />
+                  CARTAO DE CREDITO
+                </span>
+              </label>
 
-                <option value="2">
-                  <span>
-                    <Bank size={16} color="#8047F8" />
-                    CARTAO DE DEBITO
-                  </span>
-                </option>
+              <option value="2">
+                <span>
+                  <Bank size={16} color="#8047F8" />
+                  CARTAO DE DEBITO
+                </span>
+              </option>
 
-                <option value="3">
-                  <span>
-                    <Money size={16} color="#8047F8" />
-                    DINHEIRO
-                  </span>
-                </option>
+              <option value="3">
+                <span>
+                  <Money size={16} color="#8047F8" />
+                  DINHEIRO
+                </span>
+              </option>
             </div>
           </div>
         </OrderSection>
 
         <ItensSection>
           <h2>Cafes selecionados</h2>
-          <CoffeeCartItens />
-          <CoffeeCartItens />
-          <p>Total de itens</p>
-          <span>R$ 29,70</span>
-          <p>Entrega</p>
-          <span>R$ 3,50</span>
+          <div className="itens">
+            <CoffeeCartItens />
+            <CoffeeCartItens />
+            <div className="total-itens">
+              <p>Total de itens</p>
+              <span>R$ 29,70</span>
+            </div>
+            <div className="delivery-fee">
+              <p>Entrega</p>
+              <span>R$ 3,50</span>
+            </div>
+            <div className="total">
+              <p>Total</p>
+              <span>R$ 33.20</span>
+            </div>
 
-          <p>Total</p>
-          <span>R$ 33.20</span>
-
-          <button type="submit">Confirmar Pedido</button>
+            <button type="submit">Confirmar Pedido</button>
+          </div>
         </ItensSection>
       </form>
     </CartContainer>

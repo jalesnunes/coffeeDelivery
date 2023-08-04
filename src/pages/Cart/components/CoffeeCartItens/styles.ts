@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
 export const CoffeeCartItensContainer = styled.div`
-  width: 22rem;
   display: flex;
-  gap: 1rem;
-
   align-items: start;
+  justify-content: space-between;
   margin-bottom: 1rem;
-
 `;
 
 export const ImgContainer = styled.div`
@@ -77,10 +74,16 @@ export const CoffeeDetailsContainer = styled.div`
   }
 `;
 
-export const PriceContainer = styled.div``;
+export const PriceContainer = styled.div`
+  p {
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 700;
+    color: ${(props) => props.theme["base-text"]};
+  }
+`;
 
 export const BorderBottom = styled.div`
-width: 21rem;
-border-bottom: 1px solid ${(props) => props.theme["base-button"]};
-margin-bottom: 1rem;
+  border-bottom: 1px solid ${(props) => props.theme["base-button"]};
+  margin-bottom: 1rem;
 `;

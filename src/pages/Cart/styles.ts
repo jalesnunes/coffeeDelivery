@@ -131,12 +131,78 @@ export const OrderSection = styled.section`
 `;
 
 export const ItensSection = styled.section`
-  width: 40%;
+  width: 35%;
+
+  .itens {
+    padding: 2.5rem;
+    background: ${(props) => props.theme["base-card"]};
+  }
 
   h2 {
-    font-family: 'Baloo 2';
+    font-family: "Baloo 2";
     font-size: 1.125rem;
     font-weight: 700;
     color: ${(props) => props.theme["base-title"]};
+
+    margin-bottom: 1rem;
+  }
+
+  .total-itens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Roboto";
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: ${(props) => props.theme["base-text"]};
+
+    margin-bottom: .75rem;
+  }
+
+  .delivery-fee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Roboto";
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: ${(props) => props.theme["base-text"]};
+
+    margin-bottom: .75rem;
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Roboto";
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: ${(props) => props.theme["base-text"]};
+
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    height: 2.5rem;
+    text-decoration: none;
+    border: none;
+    background: ${(props) => props.theme["yellow"]};
+    cursor: pointer;
+
+    font-family: "Roboto";
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: ${(props) => props.theme["white"]};
+
+    transition: .3s;
+  }
+
+  button:hover {
+    background: ${(props) => props.theme["yellow-dark"]};
   }
 `;
