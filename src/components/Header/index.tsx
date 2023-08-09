@@ -9,9 +9,9 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      {/* <NavLink to='/' title="Home"> */}
+      <NavLink to='/' title="Home">
       <img src={LogoImg} />
-      {/* </NavLink> */}
+      </NavLink>
       <nav>
         <div>
           <MapPin size={22} weight="fill" color="#4B2995" />
@@ -19,7 +19,7 @@ export function Header() {
             West Jordan, UT
           </span>
         </div>
-        <NavLink to="/">
+        <NavLink to="/cart">
           <a>
             <ShoppingCart size={22} weight="fill" color="#C47F17" />
           </a>

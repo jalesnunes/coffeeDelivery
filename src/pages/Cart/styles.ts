@@ -125,6 +125,7 @@ export const OrderSection = styled.section`
     }
 
     .payment-method {
+      width: 100%;
       margin-top: 2rem;
     }
   }
@@ -186,7 +187,7 @@ export const ItensSection = styled.section`
     margin-bottom: 1.5rem;
   }
 
-  button {
+  button[type="submit"] {
     width: 100%;
     height: 2.5rem;
     text-decoration: none;
@@ -202,7 +203,7 @@ export const ItensSection = styled.section`
     transition: .3s;
   }
 
-  button:hover {
+  button[type="submit"]:hover {
     background: ${(props) => props.theme["yellow-dark"]};
   }
 `;

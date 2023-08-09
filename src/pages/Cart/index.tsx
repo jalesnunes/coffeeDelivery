@@ -7,6 +7,7 @@ import {
 } from "phosphor-react";
 import { CoffeeCartItens } from "./components/CoffeeCartItens";
 import { CartContainer, ItensSection, OrderSection } from "./styles";
+import { PaymentSelection } from "./components/PaymentSelection";
 
 export function Cart() {
   return (
@@ -51,27 +52,7 @@ export function Cart() {
             </header>
 
             <div className="payment-method">
-              <label>
-                <input type="checkbox" name="" id="" />
-                <span>
-                  <CreditCard size={16} color="#8047F8" />
-                  CARTAO DE CREDITO
-                </span>
-              </label>
-
-              <option value="2">
-                <span>
-                  <Bank size={16} color="#8047F8" />
-                  CARTAO DE DEBITO
-                </span>
-              </option>
-
-              <option value="3">
-                <span>
-                  <Money size={16} color="#8047F8" />
-                  DINHEIRO
-                </span>
-              </option>
+              <PaymentSelection />
             </div>
           </div>
         </OrderSection>
