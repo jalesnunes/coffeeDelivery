@@ -8,13 +8,18 @@ import {
   OurCoffees,
 } from "./styles";
 
+import storeItems from "../../data/items.json";
+
 import img from "../../assets/coffeeCup.png";
 import { CoffeeCard } from "./components/CoffeeCard";
 
 export function Home() {
+  
+  console.log(storeItems)
+
   return (
     <HomeContainer>
-      <DescriptionSec >
+      <DescriptionSec>
         <DescriptionContent>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
           <h2>
@@ -59,20 +64,14 @@ export function Home() {
 
       <OurCoffees>Nossos cafés</OurCoffees>
       <CoffeeList>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
-        <CoffeeCard></CoffeeCard>
+        {storeItems.map((coffeeStoreItem) => {
+          return (
+            <CoffeeCard
+              key={coffeeStoreItem.id}
+              coffeeStoreItem={coffeeStoreItem}
+            />
+          );
+        })}
       </CoffeeList>
     </HomeContainer>
   );

@@ -1,12 +1,24 @@
 import { CoffeeItem, QuantityOption } from "./styles";
 
+import storeItems from "../../../../data/items.json";
+
 import expressoImg from "../../../../assets/coffeeTypes/expresso.png";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { useState } from "react";
 
-export function CoffeeCard() {
+type RepositoryItemProps = {
+  coffeeStoreItem: {
+    id: number;
+    tag: string;
+    name: string;
+    price: number;
+    description: string;
+    imgUrl: string;
+  };
+};
 
-  const [quantity, setQuantity] = useState(1)
+export function CoffeeCard(props: RepositoryItemProps) {
+  const [quantity, setQuantity] = useState(1);
 
   function handlePlusQuantity() {
     setQuantity(quantity + 1);
@@ -21,12 +33,12 @@ export function CoffeeCard() {
   return (
     <CoffeeItem>
       <header>
-        <img src={expressoImg} alt="" />
-        <p>TRADICIONAL</p>
+        <img src={props.coffeeStoreItem.imgUrl} alt="" />
+        <p>{props.coffeeStoreItem.tag}</p>
       </header>
 
-      <h2>Expresso Tradicional</h2>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <h2>{props.coffeeStoreItem.name}</h2>
+      <p>{props.coffeeStoreItem.description}</p>
 
       <QuantityOption>
         <p>

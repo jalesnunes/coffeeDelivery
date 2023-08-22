@@ -20,9 +20,10 @@ export function Header() {
           </span>
         </div>
         <NavLink to="/cart">
-          <a>
+          <button>
             <ShoppingCart size={22} weight="fill" color="#C47F17" />
-          </a>
+            <div className="has-item">3</div>
+          </button>
         </NavLink>
       </nav>
     </HeaderContainer>
