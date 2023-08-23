@@ -206,4 +206,15 @@ export const ItensSection = styled.section`
   button[type="submit"]:hover {
     background: ${(props) => props.theme["yellow-dark"]};
   }
+
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Baloo 2";
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: ${(props) => props.theme["base-text"]};
+  }
 `;

@@ -1,12 +1,9 @@
 import { CoffeeItem, QuantityOption } from "./styles";
-
-import storeItems from "../../../../data/items.json";
-
-import expressoImg from "../../../../assets/coffeeTypes/expresso.png";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { useState } from "react";
+import { useCartContext } from "../../../../context/CartContext";
 
-type RepositoryItemProps = {
+type CartItemProps = {
   coffeeStoreItem: {
     id: number;
     tag: string;
@@ -17,18 +14,24 @@ type RepositoryItemProps = {
   };
 };
 
-export function CoffeeCard(props: RepositoryItemProps) {
-  const [quantity, setQuantity] = useState(1);
+export function CoffeeCard(props: CartItemProps) {
 
-  function handlePlusQuantity() {
-    setQuantity(quantity + 1);
-  }
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useCartContext()
 
-  function handleMinusQuantity() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  }
+  const quantity = getItemQuantity(props.coffeeStoreItem.id)
+
+  // const [quantity, setQuantity] = useState(1);
+
+  // function handlePlusQuantity() {
+  //   setQuantity(quantity + 1);
+  // }
+
+  // function handleMinusQuantity() {
+  //   if (quantity > 1) {
+  //     setQuantity(quantity - 1);
+  //   }
+  // }
+
 
   return (
     <CoffeeItem>
@@ -45,12 +48,12 @@ export function CoffeeCard(props: RepositoryItemProps) {
           R$ <span>9.90</span>
         </p>
         <div>
-          <div className="minus" onClick={handleMinusQuantity}>
+          <div className="minus" onClick={() => decreaseCartQuantity(props.coffeeStoreItem.id)} >
             <Minus size={14} color="#8047F8" />
           </div>
 
           <span>{quantity}</span>
-          <div className="plus" onClick={handlePlusQuantity}>
+          <div className="plus" onClick={() => increaseCartQuantity(props.coffeeStoreItem.id)}>
             <Plus size={14} color="#8047F8" />
           </div>
         </div>

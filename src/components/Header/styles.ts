@@ -44,6 +44,8 @@ export const HeaderContainer = styled.header`
 
       position: relative;
 
+      cursor: pointer;
+
       .has-item {
         width: 1.25rem;
         height: 1.25rem;

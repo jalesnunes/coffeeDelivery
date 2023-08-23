@@ -118,5 +118,6 @@ export const QuantityOption = styled.div`
       justify-content: center;
 
       background: ${(props) => props.theme["purple-dark"]};
+      cursor: pointer;
     }
 `;

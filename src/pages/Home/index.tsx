@@ -14,8 +14,6 @@ import img from "../../assets/coffeeCup.png";
 import { CoffeeCard } from "./components/CoffeeCard";
 
 export function Home() {
-  
-  console.log(storeItems)
 
   return (
     <HomeContainer>

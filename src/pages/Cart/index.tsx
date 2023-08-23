@@ -8,8 +8,14 @@ import {
 import { CoffeeCartItens } from "./components/CoffeeCartItens";
 import { CartContainer, ItensSection, OrderSection } from "./styles";
 import { PaymentSelection } from "./components/PaymentSelection";
+import { useCartContext } from "../../context/CartContext";
 
 export function Cart() {
+  const { cartItems, cartQuantity } = useCartContext();
+
+  const itemPrice = Number(9.9 * cartQuantity).toFixed(2);
+  const total = Number(3.5 + parseFloat(itemPrice)).toFixed(2);
+
   return (
     <CartContainer>
       <form>
@@ -60,11 +66,35 @@ export function Cart() {
         <ItensSection>
           <h2>Cafes selecionados</h2>
           <div className="itens">
-            <CoffeeCartItens />
-            <CoffeeCartItens />
-            <div className="total-itens">
+            {cartItems.map((item) => (
+              <CoffeeCartItens key={item.id} {...item} />
+            ))}
+
+            {cartQuantity > 0 ? (
+              <>
+                {" "}
+                <div className="total-itens">
+                  <p>Total de itens</p>
+                  <span>{itemPrice}</span>
+                </div>
+                <div className="delivery-fee">
+                  <p>Entrega</p>
+                  <span>R$ 3,50</span>
+                </div>
+                <div className="total">
+                  <p>Total</p>
+                  <span>{total}</span>
+                </div>
+                <button type="submit">Confirmar Pedido</button>{" "}
+              </>
+            ) : (
+              <div className="empty">
+                Seu carrinho está vazio.
+              </div>
+            )}
+            {/* <div className="total-itens">
               <p>Total de itens</p>
-              <span>R$ 29,70</span>
+              <span>{itemPrice}</span>
             </div>
             <div className="delivery-fee">
               <p>Entrega</p>
@@ -72,10 +102,8 @@ export function Cart() {
             </div>
             <div className="total">
               <p>Total</p>
-              <span>R$ 33.20</span>
-            </div>
-
-            <button type="submit">Confirmar Pedido</button>
+              <span>{total}</span>
+            </div> */}
           </div>
         </ItensSection>
       </form>
