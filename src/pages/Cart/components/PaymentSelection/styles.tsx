@@ -15,7 +15,7 @@ export const CreditCardOption = styled.div<PaymentOptionProps>`
 
   padding: 12px;
   background: ${({ selected }) => (selected ? "#EBE5F9" : "#E6E5E5")};
-  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "white")};
+  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "#F3F2F2")};
   border-radius: 8px;
   cursor: pointer;
 
@@ -44,7 +44,7 @@ export const DebitCardOption = styled.div<PaymentOptionProps>`
 
   padding: 12px;
   background: ${({ selected }) => (selected ? "#EBE5F9" : "#E6E5E5")};
-  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "white")};
+  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "#F3F2F2")};
   border-radius: 8px;
   cursor: pointer;
 
@@ -71,7 +71,7 @@ export const MoneyOption = styled.div<PaymentOptionProps>`
 
   padding: 12px;
   background: ${({ selected }) => (selected ? "#EBE5F9" : "#E6E5E5")};
-  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "white")};
+  border: 2px solid ${({ selected }) => (selected ? "#8047F8" : "#F3F2F2")};
   border-radius: 8px;
   cursor: pointer;
 
