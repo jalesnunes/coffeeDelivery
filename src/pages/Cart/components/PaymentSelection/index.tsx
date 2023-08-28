@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { CreditCardOptionComponent, DebitCardOptionComponent, MoneyOptionComponent } from './styles';
+import { useCartContext } from '../../../../context/CartContext';
 
 const PaymentPageContainer = styled.div`
 
@@ -9,7 +9,7 @@ const PaymentPageContainer = styled.div`
 `;
 
 export const PaymentSelection = () => {
-  const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit-card');
+  const { selectedPaymentOption, setSelectedPaymentOption } = useCartContext();
 
   const handlePaymentOptionClick = (option: string) => {
     setSelectedPaymentOption(option);
@@ -29,7 +29,6 @@ export const PaymentSelection = () => {
         selected={selectedPaymentOption === 'money'}
         onClick={() => handlePaymentOptionClick('money')}
       />
-      {/* Outros campos e elementos da página */}
     </PaymentPageContainer>
   );
 };
