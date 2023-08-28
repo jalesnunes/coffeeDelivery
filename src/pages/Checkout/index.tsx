@@ -6,8 +6,13 @@ import {
   OrderDetails,
   OrderImg,
 } from "./style";
+import { useCartContext } from "../../context/CartContext";
 
 export function Checkout() {
+
+  const { street, houseNumber, city, state, neighborhood } = useCartContext();
+
+
   return (
     <CheckoutContainer>
       <OrderDetails>
@@ -23,8 +28,8 @@ export function Checkout() {
             </div>
 
             <div>
-              <p>Entrega em <span>Rua João Daniel Martinelli, 102</span></p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>Entrega em <span>Rua {street}, {houseNumber}</span></p>
+              <p>{neighborhood} - {city}, {state}</p>
             </div>
           </div>
 

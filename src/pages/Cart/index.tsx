@@ -11,7 +11,7 @@ import { PaymentSelection } from "./components/PaymentSelection";
 import { useCartContext } from "../../context/CartContext";
 
 export function Cart() {
-  const { cartItems, cartQuantity } = useCartContext();
+  const { cartItems, cartQuantity, street, setStreet, houseNumber, city, state, neighborhood, setHouseNumber, setCity, setState, setNeighborhood } = useCartContext();
 
   const itemPrice = Number(9.9 * cartQuantity).toFixed(2);
   const total = Number(3.5 + parseFloat(itemPrice)).toFixed(2);
@@ -32,16 +32,16 @@ export function Cart() {
 
             <div>
               <input type="number" className="cep" placeholder="CEP" />
-              <input type="text" className="rua" placeholder="Rua" />
-              <input type="number" className="numero" placeholder="Numero" />
+              <input type="text" className="rua" placeholder={street} onChange={(event) => {setStreet(event.target.value)}}/>
+              <input type="text" className="numero" placeholder={houseNumber} onChange={(event) => {setHouseNumber(event.target.value)}}/>
               <input
                 type="text"
                 className="complemento"
                 placeholder="Complemento"
               />
-              <input type="text" className="bairro" placeholder="Bairro" />
-              <input type="text" className="cidade" placeholder="Cidade" />
-              <input type="text" className="uf" placeholder="UF" />
+              <input type="text" className="bairro" placeholder={neighborhood} onChange={(event) => {setNeighborhood(event.target.value)}}/>
+              <input type="text" className="cidade" placeholder={city} onChange={(event) => {setCity(event.target.value)}}/>
+              <input type="text" className="uf" placeholder={state} onChange={(event) => {setState(event.target.value)}}/>
             </div>
           </div>
 

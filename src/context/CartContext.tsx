@@ -5,8 +5,18 @@ interface CartContextData {
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  setStreet: (street: string) => void;
+  setHouseNumber: (houseNumber: string) => void;
+  setCity: (city: string) => void;
+  setState: (state: string) => void;
+  setNeighborhood: (neighborhood: string) => void;
   cartQuantity: number
-  cartItems: CartItem[]
+  cartItems: CartItem[];
+  street: string
+  houseNumber: string
+  city: string
+  state: string
+  neighborhood: string
 }
 
 type CartItem = {
@@ -26,6 +36,12 @@ export function useCartContext() {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [street, setStreet] = useState('Rua')
+  const [houseNumber, setHouseNumber] = useState('Numero')
+  const [city, setCity] = useState('Cidade')
+  const [state, setState] = useState('Estado')
+  const [neighborhood, setNeighborhood] = useState('Bairro')
+
 
   const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
 
@@ -79,7 +95,17 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         decreaseCartQuantity,
         removeFromCart,
         cartItems, 
-        cartQuantity
+        cartQuantity,
+        street, 
+        setStreet,
+        houseNumber,
+        setHouseNumber,
+        city,
+        setCity,
+        state,
+        setState,
+        neighborhood,
+        setNeighborhood
       }}
     >
       {children}
