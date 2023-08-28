@@ -1,6 +1,5 @@
 import { CoffeeItem, QuantityOption } from "./styles";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { useState } from "react";
 import { useCartContext } from "../../../../context/CartContext";
 
 type CartItemProps = {
@@ -19,19 +18,6 @@ export function CoffeeCard(props: CartItemProps) {
   const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useCartContext()
 
   const quantity = getItemQuantity(props.coffeeStoreItem.id)
-
-  // const [quantity, setQuantity] = useState(1);
-
-  // function handlePlusQuantity() {
-  //   setQuantity(quantity + 1);
-  // }
-
-  // function handleMinusQuantity() {
-  //   if (quantity > 1) {
-  //     setQuantity(quantity - 1);
-  //   }
-  // }
-
 
   return (
     <CoffeeItem>

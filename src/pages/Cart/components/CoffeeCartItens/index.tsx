@@ -1,4 +1,3 @@
-import expressoImg from "../../../../assets/coffeeTypes/expresso.png";
 import { Minus, Plus, Trash } from "phosphor-react";
 import {
   BorderBottom,

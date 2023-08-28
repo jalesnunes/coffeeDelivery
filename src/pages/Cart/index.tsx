@@ -92,18 +92,6 @@ export function Cart() {
                 Seu carrinho está vazio.
               </div>
             )}
-            {/* <div className="total-itens">
-              <p>Total de itens</p>
-              <span>{itemPrice}</span>
-            </div>
-            <div className="delivery-fee">
-              <p>Entrega</p>
-              <span>R$ 3,50</span>
-            </div>
-            <div className="total">
-              <p>Total</p>
-              <span>{total}</span>
-            </div> */}
           </div>
         </ItensSection>
       </form>
