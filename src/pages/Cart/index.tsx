@@ -9,9 +9,23 @@ import { CoffeeCartItens } from "./components/CoffeeCartItens";
 import { CartContainer, ItensSection, OrderSection } from "./styles";
 import { PaymentSelection } from "./components/PaymentSelection";
 import { useCartContext } from "../../context/CartContext";
+import { NavLink } from "react-router-dom";
 
 export function Cart() {
-  const { cartItems, cartQuantity, street, setStreet, houseNumber, city, state, neighborhood, setHouseNumber, setCity, setState, setNeighborhood } = useCartContext();
+  const {
+    cartItems,
+    cartQuantity,
+    street,
+    setStreet,
+    houseNumber,
+    city,
+    state,
+    neighborhood,
+    setHouseNumber,
+    setCity,
+    setState,
+    setNeighborhood,
+  } = useCartContext();
 
   const itemPrice = Number(9.9 * cartQuantity).toFixed(2);
   const total = Number(3.5 + parseFloat(itemPrice)).toFixed(2);
@@ -32,16 +46,51 @@ export function Cart() {
 
             <div>
               <input type="number" className="cep" placeholder="CEP" />
-              <input type="text" className="rua" placeholder={street} onChange={(event) => {setStreet(event.target.value)}}/>
-              <input type="text" className="numero" placeholder={houseNumber} onChange={(event) => {setHouseNumber(event.target.value)}}/>
+              <input
+                type="text"
+                className="rua"
+                placeholder={street}
+                onChange={(event) => {
+                  setStreet(event.target.value);
+                }}
+              />
+              <input
+                type="text"
+                className="numero"
+                placeholder={houseNumber}
+                onChange={(event) => {
+                  setHouseNumber(event.target.value);
+                }}
+              />
               <input
                 type="text"
                 className="complemento"
                 placeholder="Complemento"
               />
-              <input type="text" className="bairro" placeholder={neighborhood} onChange={(event) => {setNeighborhood(event.target.value)}}/>
-              <input type="text" className="cidade" placeholder={city} onChange={(event) => {setCity(event.target.value)}}/>
-              <input type="text" className="uf" placeholder={state} onChange={(event) => {setState(event.target.value)}}/>
+              <input
+                type="text"
+                className="bairro"
+                placeholder={neighborhood}
+                onChange={(event) => {
+                  setNeighborhood(event.target.value);
+                }}
+              />
+              <input
+                type="text"
+                className="cidade"
+                placeholder={city}
+                onChange={(event) => {
+                  setCity(event.target.value);
+                }}
+              />
+              <input
+                type="text"
+                className="uf"
+                placeholder={state}
+                onChange={(event) => {
+                  setState(event.target.value);
+                }}
+              />
             </div>
           </div>
 
@@ -85,12 +134,12 @@ export function Cart() {
                   <p>Total</p>
                   <span>{total}</span>
                 </div>
-                <button type="submit">Confirmar Pedido</button>{" "}
+                <NavLink to="/checkout">
+                  <button type="submit">Confirmar Pedido</button>{" "}
+                </NavLink>
               </>
             ) : (
-              <div className="empty">
-                Seu carrinho está vazio.
-              </div>
+              <div className="empty">Seu carrinho está vazio.</div>
             )}
           </div>
         </ItensSection>

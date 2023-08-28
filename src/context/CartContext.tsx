@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 interface CartContextData {
   getItemQuantity: (id: number) => number;
@@ -10,6 +10,7 @@ interface CartContextData {
   setCity: (city: string) => void;
   setState: (state: string) => void;
   setNeighborhood: (neighborhood: string) => void;
+  setSelectedPaymentOption: (selectedPaymentOption: string) => void;
   cartQuantity: number
   cartItems: CartItem[];
   street: string
@@ -17,6 +18,7 @@ interface CartContextData {
   city: string
   state: string
   neighborhood: string
+  selectedPaymentOption: string
 }
 
 type CartItem = {
@@ -36,14 +38,23 @@ export function useCartContext() {
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
   const [street, setStreet] = useState('Rua')
   const [houseNumber, setHouseNumber] = useState('Numero')
   const [city, setCity] = useState('Cidade')
   const [state, setState] = useState('Estado')
   const [neighborhood, setNeighborhood] = useState('Bairro')
 
+  const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit-card');
+
 
   const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
+
+  
+
+  useEffect(() => {
+    console.log(selectedPaymentOption)
+  }, [selectedPaymentOption]);
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -105,7 +116,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         state,
         setState,
         neighborhood,
-        setNeighborhood
+        setNeighborhood,
+        selectedPaymentOption,
+        setSelectedPaymentOption
       }}
     >
       {children}
