@@ -64,6 +64,8 @@ export const CoffeeDetailsContainer = styled.div`
       border-radius: 0.375rem;
       background: ${(props) => props.theme["base-button"]};
 
+      cursor: pointer;
+
       span {
         font-family: "Roboto";
         font-size: 0.75rem;
