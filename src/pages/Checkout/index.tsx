@@ -9,9 +9,17 @@ import {
 import { useCartContext } from "../../context/CartContext";
 
 export function Checkout() {
+  const {
+    street,
+    houseNumber,
+    city,
+    state,
+    neighborhood,
+    selectedPaymentOption,
+  } = useCartContext();
 
-  const { street, houseNumber, city, state, neighborhood } = useCartContext();
-
+  console.log(selectedPaymentOption)
+  console.log(neighborhood)
 
   return (
     <CheckoutContainer>
@@ -28,8 +36,15 @@ export function Checkout() {
             </div>
 
             <div>
-              <p>Entrega em <span>Rua {street}, {houseNumber}</span></p>
-              <p>{neighborhood} - {city}, {state}</p>
+              <p>
+                Entrega em{" "}
+                <span>
+                  Rua {street}, {houseNumber}
+                </span>
+              </p>
+              <p>
+                {neighborhood} - {city}, {state}
+              </p>
             </div>
           </div>
 
@@ -40,7 +55,9 @@ export function Checkout() {
 
             <div>
               <p>Previsão de entrega</p>
-              <p><span>20 min - 30 min</span></p>
+              <p>
+                <span>20 min - 30 min</span>
+              </p>
             </div>
           </div>
 
@@ -51,7 +68,17 @@ export function Checkout() {
 
             <div>
               <p>Pagamento na entrega</p>
-              <p><span>Cartão de Crédito</span></p>
+              <p>
+                {selectedPaymentOption === "credit-card" ? (
+                  <span>Cartão de Crédito</span>
+                ) : selectedPaymentOption === "debit-card" ? (
+                  <span>Cartão de Débito</span>
+                ) : selectedPaymentOption === "money" ? (
+                  <span>Dinheiro</span>
+                ) : (
+                  <span>Opção de pagamento não selecionada</span>
+                )}
+              </p>
             </div>
           </div>
         </ConfirmationData>
